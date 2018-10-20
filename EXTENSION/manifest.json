@@ -2,13 +2,12 @@
     "name": "YOLO plugin",
     "version": "1.0",
     "description": "Build an Extension!",
-    "permissions": ["storage","declarativeContent"],
-
+    "permissions": ["notifications", "geolocation"],
     "background": {
       "scripts": ["my_background.js"],
       "persistent": false
     },
-    "page_action": {
+    "browser_action": {
         "default_popup": "popup.html"
       },
     "manifest_version": 2
