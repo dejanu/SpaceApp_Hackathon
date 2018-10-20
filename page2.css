@@ -1,0 +1,35 @@
+#holder{
+    width  : 500px;
+    height : 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#itm{
+    margin:5px;
+    flex:1;
+    background-color: red;
+    display:flex;
+    flex-direction: row;
+}
+#itm_img{
+    flex:1;
+    background-color: yellow;
+}
+#itm_text{
+    flex:2;
+    background-color: black;
+}
+#all_popUp{
+    width:500px;
+    height:400px;
+    display:flex;
+    position: absolute;
+}
+#popUp{
+    margin:25px;
+    width:450px;
+    height:350px;
+    background-color: red;
+    
+}
