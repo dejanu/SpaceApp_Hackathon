@@ -1,2 +1,2 @@
 # SpaceApp_Hackathon
-Chrome Extenstion
+Chrome Extension
