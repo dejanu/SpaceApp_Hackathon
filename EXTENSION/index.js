@@ -1,11 +1,11 @@
-const app = document.getElementById('content');
+const app = document.getElementById('carousel-inner');
 
 window.onload = main
 
 function main() {
-    getData()
-    .then((json)=>{
-        setupHTMLContent(json)
+    getUrl("https://launchlibrary.net/1.4/launch/next/5?mode=verbose")
+    .then((response)=>{
+        setupHTMLContent(response.launches)
     })
     .catch((error)=>{
         console.log(error)
@@ -14,29 +14,37 @@ function main() {
 
 // HTML generation
 
-function setupHTMLContent(jsonArray) {
-    const contentElement = document.getElementById("content")
-    for (const index in jsonArray) {
-        contentElement.append(generateCardItem(jsonArray[index]))
-    }
+function setupHTMLContent(launches) {
+    launches.forEach(function(launch, index) {
+        createDiv(launch, index === 0)
+    })
+//	var weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${launch.location.pads[0].latitude}&lon=${launch.location.pads[0].longitude}&appid=6f594b427c2a97614343c56c6486d3b1`
+//	getUrl(weatherUrl)
+//	.then((response)=>{
+//   		launch.weather = response
+//    	})
+//    	.catch((error)=>{
+//        	console.log(error)
+//		createDiv(launch)
+//    	})
+//    })
 }
 
-function generateCardItem(item) {
-    console.log(item)
-    const divElement = document.createElement("div")
-    divElement.textContent = item.title
-    return divElement
+function createDiv(launch, isActive) {
+	var div = document.createElement("div")
+    div.className = isActive ? "carousel-item active" : "carousel-item"
+    div.innerHTML = `
+        <div class="launch-name">${launch.name}</div>
+        <div class="launch-windowstart">${launch.windowstart}</div>
+        <div class="launch-vid">${launch.vidURLs[0] || []}</div>
+        `
+    app.appendChild(div)
 }
 
 // ES6 Requests
-
-function getData() {
-    return extractJSON(fetch("https://jsonplaceholder.typicode.com/todos"))
-}
-
-function extractJSON(promise) {
+function getUrl(url) {
     return new Promise((resolve,reject)=>{
-      promise
+      fetch(url)
       .then((response)=>{
         resolve(response.json())
       })
@@ -44,4 +52,4 @@ function extractJSON(promise) {
         reject(error)
       })
     })
-  }
+}

@@ -1,59 +1,38 @@
 <!DOCTYPE html>
 
 <head>
-  <style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
     body {
-      width: 600px;
-      height: 400px;
+      width: 300px;
+      height: 200px;
     }
-
-    button {
-      height: 100px;
-      width: 100px;
-      outline: none;
-    }
-  </style>
-  <link rel="stylesheet" href="bootstrap-grid.min.css">
-  <link rel="stylesheet" href="bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
+    </style>
 </head>
 
 <body>
-  <a class="btn btn-primary" href="https://www.nasa.gov/" role="button">Link</a>
-    
-  <!-- Add navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="page2.html">Page2</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+<div class="container-fluid main">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div id="carousel-inner">
+
         </div>
-      </div>
-    </nav>
-
-  <div class="card border-primary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body text-primary">
-      <h5 class="card-title">Primary card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-  </div>
+</div>
 
-  <div id="content">
-
-  </div>
-
-  <script src="jquery-3.3.1.slim.min.js"></script>
-  <script src="popper.min.js"></script>
-  <script src="bootstrap.min.js"></script>
-  <script src="bootstrap.bundle.min.js"></script>
-  <script src="index.js"></script>
+<script src="jquery-3.3.1.slim.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 </body>
 
 </html>
