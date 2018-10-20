@@ -1,4 +1,4 @@
-const app = document.getElementById('content');
+const app = document.getElementById('carousel-inner');
 
 window.onload = main
 
@@ -15,25 +15,30 @@ function main() {
 // HTML generation
 
 function setupHTMLContent(launches) {
-    const contentElement = document.getElementById("content")
-    launches.forEach(function(launch) {
-	var div = document.createElement("div")
-        div.innerHTML = launch.name
-	contentElement.appendChild(div)
+    launches.forEach(function(launch, index) {
+        createDiv(launch, index === 0)
     })
+//	var weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${launch.location.pads[0].latitude}&lon=${launch.location.pads[0].longitude}&appid=6f594b427c2a97614343c56c6486d3b1`
+//	getUrl(weatherUrl)
+//	.then((response)=>{
+//   		launch.weather = response
+//    	})
+//    	.catch((error)=>{
+//        	console.log(error)
+//		createDiv(launch)
+//    	})
+//    })
 }
 
-// {/* <div class="card border-primary mb-3" style="max-width: 18rem;">
-//       <div class="card-header">Header</div>
-//       <div class="card-body text-primary">
-//         <h5 class="card-title">Primary card title</h5>
-//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//       </div> */}
-
-function generateCardItem(item) {
-    console.log(item)
-    const divElement = document.createElement("div")
-    return divElement
+function createDiv(launch, isActive) {
+	var div = document.createElement("div")
+    div.className = isActive ? "carousel-item active" : "carousel-item"
+    div.innerHTML = `
+        <div class="launch-name">${launch.name}</div>
+        <div class="launch-windowstart">${launch.windowstart}</div>
+        <div class="launch-vid">${launch.vidURLs[0] || []}</div>
+        `
+    app.appendChild(div)
 }
 
 // ES6 Requests
