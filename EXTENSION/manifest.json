@@ -1,19 +1,31 @@
 {
-    "name": "YOLO plugin",
-    "version": "1.0",
-    "description": "Build an Extension!",
-    "permissions": ["notifications", "geolocation"],
-    "background": {
-      "scripts": ["my_background.js"],
-      "persistent": false
-    },
-    "browser_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-          "16": "images/get_started16.png",
-          "32": "images/get_started32.png",
-          "48": "images/get_started48.png"
-      }
-      },
-    "manifest_version": 2
-  }
+  "name": "YOLO plugin",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": [
+    "notifications",
+    "geolocation",
+    "identity"
+  ],
+  "background": {
+    "scripts": [
+      "my_background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "calendar.html",
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png"
+    }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj3VwdWez9B5tQ3E8/+DtHO7yqUuCDRxDm9UulcMDkqWQ4EkyxIo/01vhKqbEPGIC/+XtpTjSuY80yQE6lqGjv59oZYQbbsUiOQj/XZp6lZM3a0vLIjg3PfpDxgQXllxCi5hP5AZAHclSJClcPbJD9fiLFSAXxDUkjD5t94S6jgWuao5u7apdzROLeIL/p+GjdblttFQ2reYbzQVNyGanQDzR7MCj/JNW0mJfMd+uikUnHDqCJ3JIJkF3ntUmO1mBTlvQvT7de+rXsanxmtKbUxyYfWN5WIQy2EYEVM3rWKLYH1F0MwrQOxQvUxHT9Zo9BudYo6sMMVp3E3cCLvHq7QIDAQAB",
+  "oauth2": {
+    "client_id": "150173974277-lo6to50vvthr99eu4pmunors76im6n69.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar.events"]
+  },
+
+  "manifest_version": 2
+}
