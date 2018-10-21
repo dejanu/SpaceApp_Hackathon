@@ -1,0 +1,213 @@
+<html>
+<head>
+<style>
+    
+    html,body{
+        width:100%;
+        height:100%;
+        margin:0;
+    }
+  
+    #holder{
+        width:600px;
+        display:block;
+        height:450px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 10px;
+    }
+    .item{
+        width:100%;
+        height:200px;
+        display:block;
+        margin:5px;
+        border-radius: 15px;
+    }
+    .titl{
+        display: flex;
+        flex-direction: row;
+                border-radius: 15px;
+    }
+    .titl_img{
+        width:200px;
+        height:200px;
+        background: rgba(255,255,255,0.7);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    .titl_bdy{
+        flex:1;
+        height:200px;
+        background: rgba(255,255,255,0.7);
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+      #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+          z-index:-9;
+    }
+    #littleImg{
+        width:80%;
+        height:80%;
+        border-radius: 100px;
+        box-shadow: 7px 7px 5px black;
+        margin-top:15px;
+        margin-left: 15px;
+    }
+    #littleImg:hover{
+        
+        animation-name : littleAnim;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+     }
+    @keyframes littleAnim{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(360deg);
+        }
+    }
+    .expanded{
+        width:100%;
+        background-color: rgba(40,40,40,0.8);
+        animation-name: anim1;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        z-index: 1000;
+        opacity:1;
+        border-radius: 20px;
+        color : white;
+    }
+
+    @keyframes anim1{
+        from{
+        height:0px;     
+        }
+        to{
+            height:600px;
+        }
+    }
+    .titleFont{
+        font-family: cursive;
+        font-size: 20px;
+    }
+    .dateFont{
+        font-family: fantasy;
+        font-size: 14px;
+    }
+    .descFont{
+        font-family: sans-serif;
+        margin:20px;
+    }
+    #field{
+        position:absolute;
+        z-index: -9;
+    }
+    .bdy{
+        height:0px;
+    }
+    #frame{
+        position: relative;
+    }
+    
+    .descriere{
+          font-size: 16;
+            font-family: cursive;
+            padding: 5px;
+        }
+        .descriere2{
+          font-size: 16;
+            font-family:fantasy;
+            padding: 5px;
+            width:100%;
+            
+        }
+        #camp{
+            display:flex;
+            flex-direction: column-reverse;
+        }
+    .inv{
+        width:0;
+        height:0;
+    }
+    .vis{
+         width:70%;
+        height:150px;
+    }
+    #btn{
+        width:500px;
+        height:50px;
+        position:relative;
+        margin-top:-50px;
+        margin-left:50px;
+    }
+    #holder2{
+        width:600px;
+        height:450px;
+        background-color: red;
+        position: absolute;
+        margin-top:-450;
+        margin-left:6px;
+    }
+    #map{
+        width:100%;
+        height:100%;
+        z-index: 100;
+    }
+    
+    .mapCome{
+        animation-name: come;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    .mapGo{
+        animation-name: go;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes go{
+        from{
+            
+        }
+        to{
+            margin-left: -800;
+        }
+    }
+    
+     @keyframes come{
+        from{
+            margin-left: -800;
+        }
+        to{
+            margin-left: 0;
+        }
+    }
+</style>
+
+</head>
+    <body>
+    
+        
+        <div id="holder">
+         <button id="btn"></button>
+        </div>
+        
+        <div class="mapGo" id="holder2">
+         <div id="map"></div>
+        </div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk3ynlfXiaSlqhpnKdAro6nqZP0xLXUKQ&callback=initMap"
+    async defer></script>
+        
+        <video autoplay muted loop id="myVideo">
+  <source src="sad.mp4" type="video/mp4">
+</video>
+    </body>
+<script src="pop_up.js"></script>
+</html>
