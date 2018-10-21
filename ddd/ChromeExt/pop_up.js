@@ -1,6 +1,6 @@
 const cardHolder = document.getElementById("holder");
 const mapHolder = document.getElementById("holder2");
-const lansariAPI = "http:localhost:3000/launches";
+const lansariAPI = "http://10.101.0.46:3000/launches";
 var lansari = [];
 
 
