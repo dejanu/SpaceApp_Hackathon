@@ -1,0 +1,94 @@
+html,body{
+    margin:0;
+}
+#holder{
+    width:600px;
+    height:400px;
+    background-color: red;
+    display:block;
+}
+.Middle{
+    position:absolute;
+    width:250px;
+    height:320px;
+    background-color: blue;
+    margin-top:80px;
+    margin-left:180px;
+}
+
+.Left{
+    position:absolute;
+     width:150px;
+    height:280px;
+    background-color: blue;
+    margin-top:100px;
+    margin-left:-30px;
+}
+
+.Right{
+    position:absolute;
+     width:150px;
+    height:280px;
+    background-color: blue;
+    margin-top:100px;
+    margin-left:480px;
+}
+.toMiddle{
+    position:absolute;
+    animation-name:toMid;
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.toLeft{
+    position:absolute;
+    animation-name:toL;
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.toRight{
+    position:absolute;
+    animation-name:toR;
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes toMid{
+    to{
+    width:250px;
+    height:320px;
+    background-color: blue;
+    margin-top:80px;
+    margin-left:180px;
+    }
+}
+@keyframes toL{
+    to{
+     width:150px;
+    height:280px;
+    background-color: blue;
+    margin-top:100px;
+    margin-left:-30px;
+    }
+}
+.outOfDivLeft{
+    margin-left : -250px;
+}
+
+@keyframes outLeft{
+    to{
+    margin-top:100px;
+    margin-left:480px;
+    }
+}
+
+@keyframes toR{
+    to{
+     width:150px;
+    height:280px;
+    background-color: blue;
+    margin-top:100px;
+    margin-left:480px;
+    }
+}
