@@ -30,9 +30,10 @@ setInterval(function() {
             (wErr, wRes, wBody) => {
                 if (wErr) { return console.log(wErr); }
 
-                launch.hoursLeft = Math.round((Date.parse(launch.windowstart) - currentTime)/(1000*60*60))
+                var launchTime = Date.parse(launch.windowstart)
+                launch.hoursLeft = Math.round((launchTime - currentTime)/(1000*60*60))
                 launch.forecast = JSON.parse(wBody).list.find(function(entry) {
-                    return entry.dt > currentTime
+                    return entry.dt * 1000 > launchTime
                 })
                 launches.set(launch.id, launch)
             })

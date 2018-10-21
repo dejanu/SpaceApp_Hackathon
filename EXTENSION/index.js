@@ -24,7 +24,7 @@ function createDiv(launch) {
         </div>
         <div id=${element} class="collapse" aria-labelledby=${launch.id} data-parent="#accordion">
             <div class="card-body">
-                ${launch.vidURLs[0] ? `<a href=${launch.vidURLs[0]} target="_blank">Live feed</a>` : ""}
+                ${launch.vidURLs[0] ? `<a href=${launch.vidURLs[0]} target="_blank">Live feed</a>` : ""} ${(launch.forecast) ? launch.forecast.weather[0].main : ""}
                 <div class="launch-description">${launch.missions[0].description}</div>
             </div>
         </div>
